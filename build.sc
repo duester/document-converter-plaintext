@@ -15,7 +15,7 @@ object `document-converter-plaintext` extends ScalaModule, SonatypeCentralPublis
 
   def mvnDeps = Seq(
     mvn"dev.zio::zio:2.1.20",
-    mvn"io.github.duester::plaintext:0.0.1-SNAPSHOT",
+    mvn"io.github.duester::plaintext:0.0.2-SNAPSHOT",
     mvn"io.github.duester::document-converter:0.0.1-SNAPSHOT"
   )
 
