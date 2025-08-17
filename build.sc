@@ -22,7 +22,7 @@ object `document-converter-plaintext` extends ScalaModule, SonatypeCentralPublis
   }
 
   def pomSettings = PomSettings(
-    description = "Converter plain text and intermediary document format",
+    description = "Converter between plain text and intermediary document format",
     organization = "io.github.duester",
     url = "https://github.com/duester/document-converter-plaintext",
     licenses = Seq(License.MIT),
