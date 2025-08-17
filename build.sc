@@ -7,16 +7,12 @@ import mill.scalalib.publish.*
 object `document-converter-plaintext` extends ScalaModule, SonatypeCentralPublishModule {
   def scalaVersion = "3.7.1"
 
-  def publishVersion = "0.0.1-SNAPSHOT"
-
-  def repositories = Seq(
-    "https://central.sonatype.com/repository/maven-snapshots"
-  )
+  def publishVersion = "0.1.0"
 
   def mvnDeps = Seq(
     mvn"dev.zio::zio:2.1.20",
-    mvn"io.github.duester::plaintext:0.0.2-SNAPSHOT",
-    mvn"io.github.duester::document-converter:0.0.1-SNAPSHOT"
+    mvn"io.github.duester::plaintext:0.1.0",
+    mvn"io.github.duester::document-converter:0.1.2"
   )
 
   object test extends ScalaTests, TestModule.ZioTest {
