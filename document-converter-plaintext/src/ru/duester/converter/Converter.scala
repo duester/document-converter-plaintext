@@ -24,10 +24,8 @@ object Converter:
     def toIntermediateNodes(
         node: Paragraph,
         childrenNodes: List[IntermediateNode]
-    ): IO[ConversionError, List[IntermediateNode]] =
-      ZIO.succeed(
-        List(IntermediateNode("text", attributes = Map("data" -> node.text)))
-      )
+    ): List[IntermediateNode] =
+      List(IntermediateNode("text", attributes = Map("data" -> node.text)))
 
     def getNodes(document: PlainTextDocument): List[Paragraph] =
       document.paragraphs

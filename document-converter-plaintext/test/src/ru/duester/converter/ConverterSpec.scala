@@ -18,9 +18,8 @@ object ConverterSpec extends ZIOSpecDefault:
       test("toIntermediate_success_empty"):
         val srcDocument =
           PlainTextDocument(metadata = Map("title" -> "test document"))
-        for {
-          document <- srcDocument.toIntermediate
-        } yield assert(document)(
+        val document = srcDocument.toIntermediate
+        assert(document)(
           hasField("nodes", (d: IntermediateDocument) => d.nodes, isEmpty)
             && hasField(
               "metadata",
@@ -35,9 +34,8 @@ object ConverterSpec extends ZIOSpecDefault:
             List(Paragraph("header"), Paragraph("footer")),
             Map("title" -> "test document")
           )
-        for {
-          document <- srcDocument.toIntermediate
-        } yield assert(document)(
+        val document = srcDocument.toIntermediate
+        assert(document)(
           hasField(
             "nodes",
             (d: IntermediateDocument) => d.nodes,
